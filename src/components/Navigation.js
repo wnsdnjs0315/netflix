@@ -18,7 +18,10 @@ const Navigation = () => {
                             navbarScroll
                         >
                             <Link to="/" className='nav-item'>Home</Link>
-                            <Link to="/movies" className='nav-item'>Movies</Link>
+                            {/* <Link to="/tvs" className='nav-item'>Movies</Link> */}
+                            <Link to="/today" className='nav-item'>Today</Link>
+                            <Link to="/tvrate" className='nav-item'>Rate</Link>
+                            <Link to="/popular" className='nav-item'>Popular</Link>
                         </Nav>
                         <Form className="d-flex">
                             <Form.Control

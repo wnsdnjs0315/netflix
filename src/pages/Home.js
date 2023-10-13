@@ -4,14 +4,16 @@ import { useDispatch, useSelector } from 'react-redux'
 import { movieAction } from '../redux/actions/movieAction';
 import Loading from '../components/Loading';
 import MovieSlide from '../components/MovieSlide';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const dispatch = useDispatch();
-  const {popularMovies, topRatedMovies, upcomingMovies, loading} = useSelector((state)=> state.movie)
-  console.log(popularMovies)
+  const {airingToday, topRated, popular, loading} = useSelector((state)=> state.movie)
+  console.log(airingToday)
 
   useEffect(() => {
     dispatch(movieAction.getMovies())
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (loading) {
@@ -22,14 +24,20 @@ const Home = () => {
 
   return (
     <div>
-      <Banner movie={topRatedMovies.results[17]} />
+      <Banner movie={topRated.results[0]} />
       <div className='contents'>
-          <h2>What's Popular</h2>
-          <MovieSlide movie={popularMovies}/>
-          <h2>Top Rated Movies</h2>
-          <MovieSlide movie={topRatedMovies}/>
-          <h2>Upcoming Movies</h2>
-          <MovieSlide movie={upcomingMovies}/>
+          <Link to='/today'>
+            <h2>Airing Today</h2>
+          </Link>
+          <MovieSlide movie={airingToday}/>
+          <Link to='/tvrate'>
+            <h2>Top Rated</h2>
+          </Link>
+          <MovieSlide movie={topRated}/>
+          <Link to='/popular'>
+            <h2>Popular</h2>
+          </Link>
+          <MovieSlide movie={popular}/>
       </div>  
     </div>
   )

@@ -9,7 +9,7 @@ const MovieDetail = () => {
   let { id } = useParams();
 
   const detail = async () => {
-    let url = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`;
+    let url = `https://api.themoviedb.org/3/tv/${id}?api_key=${API_KEY}&language=en-US`;
     
     let response = await fetch(url);
     let data = await response.json();
@@ -19,6 +19,7 @@ const MovieDetail = () => {
 
   useEffect(() => {
     detail();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [showDetail])
 
 
@@ -37,7 +38,7 @@ const MovieDetail = () => {
           ></div>
         </Col>
         <Col lg={6} className='detail-info-group'>
-          <div className='detail-title'>{showDetail?.original_title}</div>
+          <div className='detail-title'>{showDetail?.original_name}</div>
           <div className='detail-tagline'>{showDetail?.tagline}</div>
           <div className='detail-overview'>{showDetail?.overview}</div>
           <div className='detail-info'>
@@ -49,16 +50,8 @@ const MovieDetail = () => {
           <hr/>
           <div className='detail-info2'>
             <div>
-              <Badge bg="danger" text='dark'>Release Date</Badge>
-              {showDetail?.release_date}
-            </div>
-            <div>
-              <Badge bg="danger" text='dark'>Runtime</Badge>
-              {showDetail?.runtime}
-            </div>
-            <div>
-              <Badge bg="danger" text='dark'>Vote Average</Badge>
-              {showDetail?.vote_average}
+              <Badge bg="danger" text='dark'>First Air Date</Badge>
+              {showDetail?.first_air_date}
             </div>
             <div>
               <Badge bg="danger" text='dark'>Popularity</Badge>

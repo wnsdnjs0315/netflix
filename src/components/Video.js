@@ -16,7 +16,7 @@ const Video = () => {
     let { id } = useParams();
 
     const showVideo = async () => {
-    let url = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}&language=en-US`;
+    let url = `https://api.themoviedb.org/3/tv/${id}/videos?api_key=${API_KEY}&language=en-US`;
     
     let response = await fetch(url);
     let data = await response.json();

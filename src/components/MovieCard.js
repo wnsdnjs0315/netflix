@@ -7,7 +7,7 @@ const MovieCard = ({item}) => {
   let navigate = useNavigate();
     const { genreList  } = useSelector(state=>state.movie)
   return (
-    <div className='card-group' onClick={()=>navigate(`/movies/${item.id}`)}>
+    <div className='card-group' onClick={()=>navigate(`/tv/${item.id}`)}>
         <div
         className="card"
         style={{
@@ -18,7 +18,7 @@ const MovieCard = ({item}) => {
         }}
       >
             <div className="card-overlay">
-                <h1>{item.title}</h1>
+                <h1>{item.original_name}</h1>
                 <div className='genre'>
                     {item.genre_ids.map((id,idx)=>
                         <Badge bg="danger" key={idx}>

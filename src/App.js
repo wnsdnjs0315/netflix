@@ -4,6 +4,9 @@ import Home from './pages/Home';
 import Movies from './pages/Movies';
 import MovieDetail from './pages/MovieDetail';
 import Navigation from './components/Navigation';
+import MovieRate from './pages/MovieRate';
+import Popular from './pages/Popular';
+import MovieToday from './pages/MovieToday';
 
 //1. 3개의 페이지 생성 - home/movie/movieDetail 페이지
 //2. 홈페이지에서는 대펴 배너를 볼 수 있다
@@ -17,8 +20,11 @@ function App() {
       <Navigation />
       <Routes>
         <Route path='/' element={<Home />}/>
-        <Route path='/movies' element={<Movies />}/>
-        <Route path='/movies/:id' element={<MovieDetail />}/>
+        <Route path='/tv' element={<Movies />}/>
+        <Route path='/tvrate' element={<MovieRate />} />
+        <Route path='/tv/:id' element={<MovieDetail />}/>
+        <Route path='/today' element={<MovieToday />}></Route>
+        <Route path='/popular' element={<Popular />}></Route>
       </Routes>
     </div>
   );

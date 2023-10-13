@@ -63,7 +63,7 @@ a {text-decoration: none; color: inherit;}
 }
 
 /* contents -> home.js*/
-.contents {}
+.contents {margin-top: 15px;}
 .contents h2 {
   margin-bottom: 20px;
   font-size: 30px;
@@ -135,3 +135,48 @@ a {text-decoration: none; color: inherit;}
 .detail-info .detail-adult {color: rgb(221, 22, 22);}
 .detail-info2 {margin-bottom: 20px;}
 .detail-info2 span {margin-right: 5px;}
+
+/* movierate */
+
+.rate_contents {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 0 0 200px;
+}
+.card2-group {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+.rate_sum {
+  width: 170px; 
+  height: 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border: 2px solid #555;
+}
+.rate-info {
+  width: 65%;
+  margin-left: 20px;
+}
+.rate-info h1 {font-size: 30px;}
+.rate-info p {margin-bottom: 5px;}
+
+.card2-group:nth-child(1) .rate-info h1 {color: #fff281;}
+.card2-group:nth-child(2) .rate-info h1 {color: #f3f3f3;}
+.card2-group:nth-child(3) .rate-info h1 {color: #ffb672;}
+.rate_title {margin: 50px 0 0 150px; color: #eee;}
+
+/* Popular */
+.popular_title {margin: 50px 0 0 150px; color: #eee;}
+.popular_contents {display: flex;
+  flex-direction: column;
+  padding: 50px 0 0 200px;
+}
+
+/* today */
+.today_contents {margin: 30px 0 0 50px;}
+.today_contents .card2-group:nth-child(1) .rate-info h1 {color: inherit;}
+.today_contents .card2-group:nth-child(2) .rate-info h1 {color: inherit;}
+.today_contents .card2-group:nth-child(3) .rate-info h1 {color: inherit;}
