@@ -7,7 +7,7 @@ const Navigation = () => {
     return (
             <Navbar expand="lg" variant='dark' bg='dark'>
                 <Container fluid>
-                    <Link to="/"> 
+                    <Link to={`${process.env.PUBLIC_URL}/`}> 
                     <img width={100} src="https://cdn.worldvectorlogo.com/logos/netflix-3.svg" alt="logo" />
                     </Link>
                     <Navbar.Toggle aria-controls="navbarScroll" />
@@ -17,7 +17,7 @@ const Navigation = () => {
                             style={{ maxHeight: '120px' }}
                             navbarScroll
                         >
-                            <Link to="/" className='nav-item'>Home</Link>
+                            <Link to={`${process.env.PUBLIC_URL}/`} className='nav-item'>Home</Link>
                             {/* <Link to="/tvs" className='nav-item'>Movies</Link> */}
                             <Link to="/today" className='nav-item'>Today</Link>
                             <Link to="/tvrate" className='nav-item'>Rate</Link>

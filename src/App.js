@@ -19,7 +19,7 @@ function App() {
     <div className="App">
       <Navigation />
       <Routes>
-        <Route path='/' element={<Home />}/>
+        <Route path={`${process.env.PUBLIC_URL}/`} element={<Home />}/>
         <Route path='/tv' element={<Movies />}/>
         <Route path='/tvrate' element={<MovieRate />} />
         <Route path='/tv/:id' element={<MovieDetail />}/>
